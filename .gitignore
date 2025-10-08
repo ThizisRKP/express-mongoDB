@@ -1,0 +1,7 @@
+node_modules
+
+.env
+
+
+# when we push this file into github , whatever things in gitignore thats not push in gitHub
+# its used to igonre files pushing into gitHub😌
