@@ -7,17 +7,25 @@
 </head>
 <body>
     <script>
-       const allowedQuerys = ["role","userName","limit"];
-       const incomingQueries = ["password", "name", "role"];
+//        const allowedQuerys = ["role","userName","limit"];
+//        const incomingQueries = ["password", "name", "role"];
 
-       const notAllowedQueries = incomingQueries.filter(
-       q => !allowedQuerys.includes(q)
-       
-       
-);
-      console.log(Boolean(notAllowedQueries));
-      
-      console.log(notAllowedQueries); // ["password", "name"]
+//        const notAllowedQueries = incomingQueries.filter(
+//        q => !allowedQuerys.includes(q)   
+// );
+//       console.log(Boolean(notAllowedQueries));
+//       console.log(notAllowedQueries); // ["password", "name"]
+
+async function fetchApi() {
+  
+    const res = await fetch("https://express-mongodb-y05x.onrender.com/api/users");
+    const data = await res.json(); // converting JSON object to normal object
+    console.log(data); 
+}
+
+
+fetchApi();
+
     </script>
 </body>
 </html>

@@ -7,7 +7,7 @@ const movieSchema = new mongoose.Schema({
     leadActress: { type: String, required: true },
     rating: { type: Number, min: 0, max: 10, required: true },
     imageUrl : {type : String,required : true},
-    yearOfRealease : {type : String , required : true},
+    yearOfRelease : {type : String , required : true},
 })
 
   export default mongoose.model("Movie",movieSchema)

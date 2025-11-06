@@ -13,7 +13,7 @@ router.get("/api/movies", async (req,res)=>{
             leadActress,
             rating,
             imageUrl,
-            yearOfRealease,
+            yearOfRelease,
             limit,
           } = req.query;
 
@@ -25,7 +25,7 @@ router.get("/api/movies", async (req,res)=>{
       "leadActress",
       "rating",
       "imageUrl",
-      "yearOfRealease",
+      "yearOfRelease",
       "limit",];
     
     
@@ -72,7 +72,7 @@ router.get("/api/movies", async (req,res)=>{
     if (imageUrl){
       filter.imageUrl = imageUrl
     } ;
-    if (yearOfRealease){
+    if (yearOfRelease){
       filter.yearOfRelease = yearOfRelease;
     } 
     
@@ -117,13 +117,13 @@ router.post("/api/movies", async (req, res) => {
     leadActress,
     rating,
     imageUrl,
-    yearOfRealease
+    yearOfRelease
     } = req.body;
   
-    if (!name || !genre || !director || !leadActor || !leadActress || !rating || !imageUrl || !yearOfRealease){
+    if (!name || !genre || !director || !leadActor || !leadActress || !rating || !imageUrl || !yearOfRelease){
     return res
       .status(400)
-      .json({ message: "name , genre , director , leadActor ,leadActress , rating , imageUrl , yearOfRealease should be mandotory" });
+      .json({ message: "name , genre , director , leadActor ,leadActress , rating , imageUrl , yearOfRelease should be mandotory" });
   } else {
     await Movie.create({ 
       name,
@@ -133,7 +133,7 @@ router.post("/api/movies", async (req, res) => {
       leadActress,
       rating,
       imageUrl,
-      yearOfRealease,
+      yearOfRelease,
        });
     res.status(201).json({ message: "new movie created" });
   }
